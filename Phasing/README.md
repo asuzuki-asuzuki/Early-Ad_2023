@@ -15,6 +15,7 @@
 
 ## SVs (detected by nanomonsv)
 1. Extract all read names assigned to the haplotypes (haplotagged.bam: BAM file with Haplotype (HP) tags determined by WhatsHap).
-`python [extract_phased_readname.py](./extract_phased_readname.py) haplotagged.bam phased_read.txt`
-2. Extract information on SVs (nanomonsv.result.filt.svtype.txt: output file of nanomonsv's post_filter.py/sv_type.py; nanomonsv.supporting_read.txt: output file of "nanomonsv get" command).
+[extract_phased_readname.py](./extract_phased_readname.py)  
+`python extract_phased_readname.py haplotagged.bam phased_read.txt`
+3. Extract information on SVs (nanomonsv.result.filt.svtype.txt: output file of nanomonsv's post_filter.py/sv_type.py; nanomonsv.supporting_read.txt: output file of "nanomonsv get" command).
 `python filter_supporting_read.py nanomonsv.result.filt.svtype.txt nanomonsv.supporting_read.txt nanomonsv.supporting_read_filt.txt`  
