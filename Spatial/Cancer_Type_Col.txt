@@ -1,0 +1,4 @@
+CellType	col
+TypeA	"#1f77b4"
+TypeB	"#00ff00"
+TypeMIA	"#d62728"
