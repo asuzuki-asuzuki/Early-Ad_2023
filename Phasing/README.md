@@ -1,6 +1,6 @@
 # Assignment of mutations to haplotypes
 ## point mutations
-1. Prepare a list of mutations (chr, 0-based position; TSV format).
+1. Prepare a list of mutations (chr, 0-based position; TSV format).  
 [list.pl](./list.pl)  
 2. Extract information on the HP tags, PS tags, read names of mutations from Whatshap-happlotagged BAM files.  
 `samtools mpileup -l SNV.list --min-BQ 5 --min-MQ 20 --excl-flags 2304 --output-extra HP,PS,QNAME happlotagged.bam > SNV.pileup`  
