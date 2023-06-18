@@ -90,3 +90,16 @@ python stat_phasing_sv.py
 python stat_phasing_sv2_fix.py  
       nanomonsv_phasing_summary.txt nanomonsv_phasing_summary2_fix.txt block-list.tsv
 ```  
+
+# Determination of mutation occurrence on long reads  
+1. Count base patterns of two closely located SNVs at a haplotype level (SNV.PASS.vcf: output file of GATK Mutect 2 and Annovar with filter PASS; SNV.pileup: output file of SAMtools mpileup for SNV position).  
+[call_phased_snv.py](./call_phased_snv.py)  
+```
+python call_phased_snv.py SNV.PASS.vcf SNV.pileup > call_phased.tsv
+```  
+2. Extract mutation pairs of which the occcurrence orer can be inferred (threshold: set to 2 in this project).  
+[count_ordered_snv.py](./count_ordered_snv.py)  
+```
+python count_ordered_snv.py call_phased.tsv threshold > position.tsv
+```
+
