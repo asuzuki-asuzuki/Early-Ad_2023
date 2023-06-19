@@ -26,25 +26,25 @@ samtools mpileup
 [hantei_HP_SNV.pl](./hantei_HP_SNV.pl), [hantei_HP_indel.pl](./hantei_HP_indel.pl), [hantei_HP_MNV.pl](./hantei_HP_MNV.pl)  
 
 ## SVs (detected by nanomonsv)
-1. Extract all read names assigned to the haplotypes (haplotagged.bam: BAM file with Haplotype (HP) tags determined by WhatsHap).
+1. Extract all read names assigned to the haplotypes (**haplotagged.bam**: BAM file with Haplotype (HP) tags determined by WhatsHap).
 [extract_phased_readname.py](./extract_phased_readname.py)  
 ```
 python extract_phased_readname.py haplotagged.bam phased_read.txt
 ```  
-2. Extract information on SVs (nanomonsv.result.filt.svtype.txt: output file of nanomonsv's post_filter.py/sv_type.py; nanomonsv.supporting_read.txt: output file of "nanomonsv get" command).  
+2. Extract information on SVs (**nanomonsv.result.filt.svtype.txt**: output file of nanomonsv's post_filter.py/sv_type.py; **nanomonsv.supporting_read.txt**: output file of "nanomonsv get" command).  
 [filter_supporting_read.py](./filter_supporting_read.py)  
 ```
 python filter_supporting_read.py
       nanomonsv.result.filt.svtype.txt nanomonsv.supporting_read.txt nanomonsv.supporting_read_filt.txt
 ```
-3. Add phasing information (block-list.tsv: WhatsHap output file for phased block regions).  
+3. Add phasing information (**block-list.tsv**: WhatsHap output file for phased block regions).  
 [add_phaseinfo_nanomonsv.py](./add_phaseinfo_nanomonsv.py)  
 ```
 python add_phaseinfo_nanomonsv.py
       nanomonsv.result.filt.svtype.txt nanomonsv.supporting_read_filt.txt phased_read.txt  
       block-list.tsv nanomonsv.supporting_read_filt_phased.txt
 ```  
-4. Divide reads into primary or supplementary alignment (q20.bam: BAM files filtered by MAPQ 20 or higher in this project).  
+4. Divide reads into primary or supplementary alignment (**q20.bam**: BAM files filtered by MAPQ 20 or higher in this project).  
 [extract_reads_nanomonsv.py](./extract_reads_nanomonsv.py)  
 ```
 python extract_reads_nanomonsv.py  
@@ -64,7 +64,7 @@ samtools sort -@ 10 nanomonsv_reads_supplementary.bam -o nanomonsv_reads_supplem
 samtools index nanomonsv_reads_primary.sort.bam  
 samtools index nanomonsv_reads_supplementary.sort.bam
 ```  
-7. Extract SNP information from supplementary alignments (whatshap.phased.vcf: VCF file of germline SNPs with phase information from WhatsHap phase).  
+7. Extract SNP information from supplementary alignments (**whatshap.phased.vcf**: VCF file of germline SNPs with phase information from WhatsHap phase).  
 ```
 cat  whatshap.phased.vcf  | grep -v "#" | cut -f 1,2,4,5,9,10 | grep PS > germlinesnps_pos_list.txt  
 samtools mpileup -l germlinesnps_pos_list.txt --min-BQ 5 --min-MQ 20 --output-QNAME  
@@ -92,7 +92,7 @@ python stat_phasing_sv2_fix.py
 ```  
 
 # Determination of the order of mutation occurrence on long reads  
-1. Count base patterns of two closely located SNVs at a haplotype level (SNV.PASS.vcf: output file of GATK Mutect 2 and Annovar with filter PASS; SNV.pileup: output file of SAMtools mpileup for SNV position).  
+1. Count base patterns of two closely located SNVs at a haplotype level (**SNV.PASS.vcf**: output file of GATK Mutect 2 and Annovar with filter PASS; **SNV.pileup**: output file of SAMtools mpileup for SNV position).  
 [call_phased_snv.py](./call_phased_snv.py)  
 ```
 python call_phased_snv.py SNV.PASS.vcf SNV.pileup > call_phased.tsv
