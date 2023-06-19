@@ -64,9 +64,9 @@ samtools sort -@ 10 nanomonsv_reads_supplementary.bam -o nanomonsv_reads_supplem
 samtools index nanomonsv_reads_primary.sort.bam  
 samtools index nanomonsv_reads_supplementary.sort.bam
 ```  
-7. Extract SNP information from supplementary alignments (nanomonsv.result.vcf: output file of "nanomonsv get" command).  
+7. Extract SNP information from supplementary alignments (whatshap.phased.vcf: VCF file of germline SNPs with phase information from WhatsHap phase).  
 ```
-cat  nanomonsv.result.vcf  | grep -v "#" | cut -f 1,2,4,5,9,10 | grep PS > germlinesnps_pos_list.txt  
+cat  whatshap.phased.vcf  | grep -v "#" | cut -f 1,2,4,5,9,10 | grep PS > germlinesnps_pos_list.txt  
 samtools mpileup -l germlinesnps_pos_list.txt --min-BQ 5 --min-MQ 20 --output-QNAME  
       nanomonsv_reads_supplementary.sort.bam > samtools_mpileup_list_supplementary.txt
 ```  
