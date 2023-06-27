@@ -2,7 +2,7 @@
 ## point mutations (detected by GATK Mutect 2)
 1. Prepare a list of mutations (chr, 0-based position; TSV format).  
 [list.pl](./list.pl)  
-2. Extract information on the HP tags, PS tags and read names of mutation positions from the Whatshap haplotagged BAM file.  
+2. Extract information on the HP tags, PS tags and read names of mutation positions from the Whatshap haplotagged BAM file using SAMtools (version 1.12).  
 ```
 samtools mpileup  
       -l SNV.list --min-BQ 5 --min-MQ 20 --excl-flags 2304 --output-extra HP,PS,QNAME
