@@ -1,5 +1,6 @@
 # Assignment of mutations to haplotypes
 ## point mutations (detected by GATK Mutect 2)
+The analyses in this project were performed using Perl scripts (perl 5).  
 1. Prepare a list of mutations (chr, 0-based position; TSV format).  
 [list.pl](./list.pl)  
 2. Extract information on the HP tags, PS tags and read names of mutation positions from the Whatshap haplotagged BAM file using SAMtools (version 1.12).  
