@@ -13,5 +13,5 @@
 ## Decovolution analysis of Visium data
 - [public_scRNA_ana.R](./public_scRNA_ana.R): custom annotation of scRNA-seq data (datasets provided from Zhu et al. 2022 _Exp Mol Med_ PMID: 36434043).
 - [Deconv_byScRNA.R](./Deconv_byScRNA.R): deconvolution of Visium data with scRNA-seq reference datasets by RCTD (spacexr 2.2.1).
-- [Deconv_byXenium.R](./Deconv_byXenium.R): deconvolution of Visium data with Xenium reference data by RCTD.
+- [Deconv_byXenium.R](./Deconv_byXenium.R): deconvolution of Visium data with Xenium reference data by RCTD (spacexr 2.2.1).
   - [VIS_topic.R](./VIS_topic.R): visualization of results of Visium deconvolution analysis (scatterpie 0.1.9).
