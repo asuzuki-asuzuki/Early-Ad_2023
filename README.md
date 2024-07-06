@@ -5,6 +5,6 @@ In this study, we performed whole-genome sequencing and multi-layered analysis o
 - [Phasing](./Phasing): Mutation assignement to haplotypes and determination of the order of mutation occurrence.
 - [Spatial](./Spatial): Analysis of Visium and Xenium datasets. Scripts for deconvolution analysis are also provided.
 
-## Reference
+### Citation
 Haga Y et al. *Nature Comunications* 2023 14(1):8375. doi: 10.1038/s41467-023-43732-y.  
 Whole-genome sequencing reveals the molecular implications of the stepwise progression of lung adenocarcinoma.
