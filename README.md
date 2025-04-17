@@ -6,5 +6,5 @@ In this study, we performed whole-genome sequencing and multi-layered analysis o
 - [Spatial](./Spatial): Analysis of Visium and Xenium datasets. Scripts for deconvolution analysis are also provided.
   
 ## Citation
-Haga Y et al. *Nature Communications* 2023 14(1):8375. doi: 10.1038/s41467-023-43732-y.  
+Haga Y et al. *Nature Communications* 2023 14:8375. doi: 10.1038/s41467-023-43732-y.  
 Whole-genome sequencing reveals the molecular implications of the stepwise progression of lung adenocarcinoma.
